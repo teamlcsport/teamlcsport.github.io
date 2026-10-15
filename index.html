@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Team LC Sport : textile personnalisé, banderoles, goodies, récompenses et matériel sportif pour associations, entreprises et collectivités. Pack licenciés et dotation pour les clubs.">
+<meta property="og:title" content="Team LC Sport">
+<meta property="og:description" content="Des tenues à vos couleurs, avec votre logo. Associations, entreprises, collectivités.">
+<meta property="og:image" content="https://teamlcsport.fr/img/og.jpg">
+<meta property="og:url" content="https://teamlcsport.fr/">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<title>Team LC Sport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: sticky header, sectioned single page; gold = brand accent from the logo, charcoal for strong bands. Deliberately single light theme, matching the printed catalogue. */
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --paper:#faf8f4; --card:#ffffff; --ink:#22262b; --muted:#666a70; --line:#e7e1d5;
+  --gold:#b8861f; --gold2:#e3bd52; --goldsoft:#f7eed6; --dark:#1d2126; --darkmuted:#b9bcc1;
+  --display:'Lora',Georgia,'Times New Roman',serif;
+  --body:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gutr:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.lead{color:var(--muted);max-width:62ch}
+section{padding-block:64px}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.sec-head h2{font-size:clamp(26px,3.4vw,36px)}
+.rule{height:3px;width:84px;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 14px/1 var(--body);padding:13px 20px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-sm{padding:9px 14px;font-size:13px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(250,248,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.hd img{height:46px;width:auto}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+@media (max-width:900px){nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,56px);letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .aud{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.hero .lead{margin-top:18px;font-size:16px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mosaic img{background:var(--card);border:1px solid var(--line);border-radius:18px;aspect-ratio:1;object-fit:contain;width:100%}
+.mosaic img:nth-child(2){transform:translateY(22px)}
+.mosaic img:nth-child(4){transform:translateY(22px)}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.mosaic{grid-template-columns:repeat(4,1fr);gap:8px}.mosaic img:nth-child(n){transform:none;border-radius:12px}}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.perk b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
+.perk span{font-size:13.5px;color:var(--muted)}
+@media (max-width:820px){.perks{grid-template-columns:1fr 1fr}}
+
+/* catalogue */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{font:500 13.5px/1 var(--body);padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.prod .ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:14px;border-bottom:1px solid var(--line);background:#fff}
+.prod .ph img{width:100%;height:100%;object-fit:contain}
+.prod .ph.duo img{width:50%}
+.prod .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.prod h3{font-size:19px}
+.prod .mat{font-size:13px;color:var(--muted)}
+.tag{align-self:flex-start;font-size:11.5px;font-weight:600;color:#7a5a12;background:var(--goldsoft);border-radius:999px;padding:3px 10px;margin-top:4px}
+.prod .pr{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:auto;padding-top:12px}
+.price{font-family:var(--display);font-size:28px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{display:block;font-family:var(--body);font-size:11.5px;font-weight:400;color:var(--muted);margin-bottom:4px}
+.note{margin-top:22px;padding:14px 18px;border-left:4px solid var(--gold);background:var(--card);border-radius:0 10px 10px 0;font-size:14px;color:var(--muted)}
+.note b{color:var(--ink);font-weight:600}
+
+/* pack */
+.band-dark{background:var(--dark);color:#fff}
+.band-dark .lead{color:var(--darkmuted)}
+.band-dark .eyebrow{color:var(--gold2)}
+.pack{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:start}
+@media (max-width:860px){.pack{grid-template-columns:1fr}}
+.pack-card{background:#2a2f36;border-radius:18px;padding:22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.pack-card .imgs{display:flex;gap:6px}
+.pack-card .imgs img{width:92px;height:92px;object-fit:contain;background:#fff;border-radius:12px;padding:4px}
+.pack-card b{font-family:var(--display);font-size:30px;color:var(--gold2)}
+.pack-card span{display:block;font-size:13.5px;color:var(--darkmuted)}
+.steps{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center}
+.steps li i{font-style:normal;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:#fff}
+.steps li.hl span{font-family:var(--display);font-size:19px;color:var(--gold2)}
+.stairs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:end;border-bottom:3px solid #fff;margin-top:18px}
+.st{border-radius:14px 14px 0 0;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+.st .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.st .c{font-size:13px}
+.st .v{font-family:var(--display);font-size:30px;font-weight:600;line-height:1.1;margin-top:6px}
+.st .d{font-size:12.5px;opacity:.92}
+.st1{min-height:150px;background:linear-gradient(160deg,#d6ab45,#c08f26)}
+.st2{min-height:190px;background:linear-gradient(160deg,#c08f26,#9c7015)}
+.st3{min-height:230px;background:#353b43}
+.st3 .v{font-size:21px;color:var(--gold2)}
+@media (max-width:560px){.stairs{grid-template-columns:1fr;border-bottom:0}.st{min-height:0!important;border-radius:14px}}
+.bonus{margin-top:16px;padding:14px 18px;border-radius:12px;border:1px solid #4a4f57;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.bonus b{font-family:var(--display);font-size:17px;color:var(--gold2)}
+.cond{margin-top:18px;font-size:13px;color:var(--darkmuted)}
+.cond summary{cursor:pointer;color:#fff;font-weight:500}
+.cond ul{margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+
+/* au-delà */
+.xgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:860px){.xgrid{grid-template-columns:1fr}}
+.x{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.x img{width:100%;aspect-ratio:860/740;object-fit:cover}
+.x .bd{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.x h3{font-size:21px}
+.x p{font-size:14px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12px;background:#f1eee8;border-radius:999px;padding:3px 10px}
+.dv{font-family:var(--display);font-weight:600;color:var(--gold);margin-top:auto;padding-top:6px}
+
+/* supports */
+.ban{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px}
+@media (max-width:760px){.ban{grid-template-columns:1fr}}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th{font-family:var(--display);font-weight:600;text-align:right;padding:8px 10px;border-bottom:2px solid var(--ink)}
+td{padding:10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sgrid .wide{grid-column:span 2}
+@media (max-width:860px){.sgrid{grid-template-columns:1fr 1fr}.sgrid .wide{grid-column:span 2}}
+@media (max-width:560px){.sgrid{grid-template-columns:1fr}.sgrid .wide{grid-column:auto}}
+.s{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.s img{width:100%;aspect-ratio:600/504;object-fit:contain;background:#fff;border-bottom:1px solid var(--line)}
+.s.wide img{aspect-ratio:1248/504}
+.s .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.s h3{font-size:18px}
+.s p{font-size:13.5px;color:var(--muted)}
+.s .dim{color:var(--ink);font-weight:500;font-size:13px}
+.s .dv{font-size:24px;color:var(--ink)}
+.s .dv small{display:block;font-family:var(--body);font-size:11.5px;font-weight:400;color:var(--muted)}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+.opt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.opt h3{font-size:18px}
+.opt p{font-size:13.5px;color:var(--muted)}
+.opt .pp{font-family:var(--display);font-size:28px;font-weight:600;white-space:nowrap;text-align:right}
+.opt .pp small{display:block;font-family:var(--body);font-size:12px;font-weight:400;color:var(--muted)}
+.live{grid-column:1/-1;background:var(--goldsoft);border:1px solid #ecd9a4;border-radius:14px;padding:22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.live > div{flex:1;min-width:0}
+.live h3{font-size:20px}
+.live p{font-size:14px;color:#5d5340;margin-top:4px}
+.badge{font-size:12px;font-weight:600;color:#7a5a12;background:#fff;border:1px solid #ecd9a4;border-radius:999px;padding:5px 12px;white-space:nowrap}
+
+/* devis */
+.devis{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+@media (max-width:860px){.devis{grid-template-columns:1fr}}
+.how{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:14px}
+.how li{display:grid;grid-template-columns:34px 1fr;gap:12px}
+.how li i{font-style:normal;font-family:var(--display);font-size:24px;font-weight:600;color:var(--gold);line-height:1}
+.how b{display:block;font-weight:600}
+.how span{font-size:14px;color:var(--muted)}
+form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){form{grid-template-columns:1fr;padding:18px}}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+label,.lbl{font-size:13px;font-weight:500}
+input,select,textarea{font:400 14.5px/1.4 var(--body);color:var(--ink);background:#fff;border:1px solid #d9d2c4;border-radius:10px;padding:11px 12px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{display:inline-flex;align-items:center;gap:6px;font-weight:400;font-size:13.5px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;background:#fff}
+.checks input{width:auto;margin:0;accent-color:var(--gold)}
+.lines{display:flex;flex-direction:column;gap:8px}
+.line{display:grid;grid-template-columns:1fr 92px 40px;gap:8px}
+.line button{border:1px solid var(--line);background:#fff;border-radius:10px;cursor:pointer;font-size:18px;color:var(--muted)}
+.add{justify-self:start;background:none;border:0;color:var(--gold);font:600 13.5px var(--body);cursor:pointer;padding:4px 0}
+.err{color:#a3341f;font-size:13px}
+.recap{grid-column:1/-1;background:var(--paper);border:1px dashed #cdbf9f;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.recap pre{margin:0;white-space:pre-wrap;font:13px/1.55 var(--body);max-height:260px;overflow:auto}
+.recap .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ok{font-size:13px;color:#2f6b3a}
+
+/* footer */
+footer{background:var(--dark);color:#fff;padding-block:48px 36px}
+.ft{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:760px){.ft{grid-template-columns:1fr}}
+.ft h2{font-size:30px}
+.ft p{color:var(--darkmuted);margin-top:8px}
+.coord{display:flex;flex-direction:column;gap:12px}
+.coord div{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.coord .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);width:78px}
+.coord .v{font-size:17px;user-select:all}
+.copy{font:500 12px var(--body);color:#fff;background:transparent;border:1px solid #555b63;border-radius:999px;padding:5px 10px;cursor:pointer}
+.legal{margin-top:36px;padding-top:18px;border-top:1px solid #3a3f46;font-size:12.5px;color:var(--darkmuted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <a href="#top" aria-label="Team LC Sport, accueil"><img src="img/logo_team.png" alt="Team LC Sport"></a>
+    <nav aria-label="Navigation principale">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#pack">Pack licenciés</a>
+      <a href="#plus">Goodies &amp; récompenses</a>
+      <a href="#supports">Supports</a>
+      <a href="#services">Services</a>
+      <a class="btn btn-gold btn-sm" href="#devis">Demander un devis</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="aud">Associations · Entreprises · Collectivités</p>
+          <h1>Des tenues à vos couleurs, <em>avec votre logo</em></h1>
+          <p class="lead">Textile personnalisé, banderoles, goodies, récompenses et matériel sportif pour vos adhérents, vos équipes et vos événements. Un seul interlocuteur, un devis précis, une livraison partout en France.</p>
+          <div class="ctas">
+            <a class="btn btn-gold" href="#catalogue">Voir le catalogue</a>
+            <a class="btn btn-ghost" href="#devis">Demander un devis</a>
+          </div>
+        </div>
+        <div class="mosaic" aria-hidden="true">
+          <img src="img/bahrain.jpg" alt=""><img src="img/urban.jpg" alt=""><img src="img/evans.jpg" alt=""><img src="img/marabu.jpg" alt="">
+        </div>
+      </div>
+      <div class="perks">
+        <div class="perk"><b>Votre logo partout</b><span>Devant, dans le dos, sur la manche ou la jambe, en multicolore.</span></div>
+        <div class="perk"><b>Nombreux coloris</b><span>Pour coller aux couleurs de votre club ou à votre charte.</span></div>
+        <div class="perk"><b>Nom &amp; numéro</b><span>Personnalisation individuelle en option.</span></div>
+        <div class="perk"><b>Devis sur mesure</b><span>Selon vos quantités et vos envies.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogue">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Textile &amp; accessoires</span>
+        <h2>Le catalogue</h2>
+        <div class="rule"></div>
+        <p class="lead">Une sélection de nos articles les plus demandés. De nombreuses autres références sont disponibles (coupes, matières, coloris, tailles enfants…) : dites-nous ce que vous cherchez.</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filtrer par catégorie"></div>
+      <div class="grid" id="grid"></div>
+      <p class="note"><b>Prix indicatifs</b> à l'unité, pour une commande de 5 pièces avec un logo multicolore sur le cœur (ou sur la jambe pour les shorts et pantalons). Tarifs dégressifs selon les quantités : demandez un devis précis selon vos envies.</p>
+    </div>
+  </section>
+
+  <section id="pack" class="band-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Notre spécialité · Clubs et associations</span>
+        <h2>Le pack licenciés</h2>
+        <div class="rule"></div>
+        <p class="lead">Nous créons avec vous un pack d'équipement pour vos licenciés, intégré directement dans votre cotisation. Chaque licencié est équipé aux couleurs du club, l'opération ne coûte rien au club, et votre volume de commande vous fait gagner de la dotation.</p>
+      </div>
+      <div class="pack">
+        <div>
+          <div class="pack-card">
+            <div class="imgs"><img src="img/urban.jpg" alt="Sweat à capuche"><img src="img/beagle.jpg" alt="T-shirt"></div>
+            <div><b>30 €</b><span>par licencié · sweat + tee-shirt + marquage</span></div>
+          </div>
+          <ol class="steps">
+            <li><i>1</i><span>Votre club compte <b>100 licenciés</b>.</span></li>
+            <li><i>2</i><span>Vous créez un <b>pack à 30 €</b> et l'intégrez à la cotisation.</span></li>
+            <li><i>3</i><span>Les cotisations financent <b>3 000 € d'équipement</b> : 0 € à la charge du club.</span></li>
+            <li class="hl"><i>4</i><span>Le club reçoit 400 € de dotation, pour équiper ses dirigeants ou ses éducateurs.</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3 style="font-size:24px">Le programme de dotation</h3>
+          <p class="lead" style="margin-top:6px">Selon votre volume de commande sur la saison, vous débloquez de la dotation par palier.</p>
+          <div class="stairs">
+            <div class="st st1"><span class="t">Palier 1</span><span class="c">dès 2 000 € facturés et payés</span><span class="v">400 €</span><span class="d">de dotation</span></div>
+            <div class="st st2"><span class="t">Palier 2</span><span class="c">dès 5 000 € facturés et payés</span><span class="v">+ 600 €</span><span class="d">soit 1 000 € au total</span></div>
+            <div class="st st3"><span class="t">Et ainsi de suite</span><span class="c">Au-delà, de nouveaux paliers</span><span class="v">Nous consulter</span></div>
+          </div>
+          <div class="bonus"><b>Engagement sur plusieurs saisons</b><span class="lead">Le montant de votre dotation est augmenté.</span></div>
+          <details class="cond">
+            <summary>Conditions de la dotation</summary>
+            <ul>
+              <li>Le volume pris en compte est le chiffre d'affaires total du club sur la saison, toutes commandes confondues : textile, supports de communication, goodies, récompenses, matériel, boutique…</li>
+              <li>La dotation est attribuée dès que le palier est atteint et que les commandes sont réglées en totalité.</li>
+              <li>Elle s'utilise en marchandise, valorisée au prix public (tarif sans remise), logos et marquages compris.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plus">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Au-delà du textile</span>
+        <h2>Goodies, récompenses &amp; matériel</h2>
+        <div class="rule"></div>
+        <p class="lead">Pour vos tournois, vos remises de prix, vos événements ou l'équipement de vos équipes : un seul interlocuteur pour l'ensemble de vos besoins.</p>
+      </div>
+      <div class="xgrid">
+        <article class="x"><img src="img/x_goodies.jpg" alt="Carnet, gourde et stylos personnalisés"><div class="bd"><h3>Goodies personnalisés</h3><p>Des objets à votre logo pour vos adhérents, collaborateurs, partenaires et événements.</p><div class="chips"><span>Gourdes</span><span>Stylos</span><span>Carnets</span><span>Mugs</span><span>Tote bags</span><span>Porte-clés</span></div><span class="dv">Sur devis</span></div></article>
+        <article class="x"><img src="img/x_recompenses.jpg" alt="Coupes et médailles"><div class="bd"><h3>Récompenses</h3><p>Pour vos tournois, championnats, challenges et cérémonies.</p><div class="chips"><span>Coupes</span><span>Médailles</span><span>Trophées</span><span>Plaques gravées</span></div><span class="dv">Sur devis</span></div></article>
+        <article class="x"><img src="img/x_materiel.jpg" alt="Plots, cerceaux, échelle de rythme, ballons et trousse de secours"><div class="bd"><h3>Matériel sportif</h3><p>Pour équiper vos entraînements, vos compétitions et vos structures.</p><div class="chips"><span>Plots</span><span>Cerceaux</span><span>Échelles de rythme</span><span>Ballons</span><span>Trousses de secours</span><span>Filets</span></div><span class="dv">Sur devis</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="supports" style="background:#f3efe7">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Signalétique &amp; événementiel</span>
+        <h2>Supports de communication</h2>
+        <div class="rule"></div>
+        <p class="lead">Rendez votre structure visible lors de vos tournois, salons et manifestations, ou mettez en valeur vos partenaires.</p>
+      </div>
+      <div class="ban">
+        <img src="img/banderole.png" alt="Exemple de banderole 2 m × 1 m">
+        <div style="min-width:0">
+          <h3 style="font-size:22px">Banderoles 2 m × 1 m</h3>
+          <p class="lead" style="font-size:14px;margin:4px 0 12px">Pour vos salles, terrains, façades et manifestations.</p>
+          <div class="tbl"><table>
+            <thead><tr><th>Prix par pièce</th><th>1 ex.</th><th>2 ex.</th><th>5 ex.</th></tr></thead>
+            <tbody>
+              <tr><td><b>Banderole</b></td><td>30 €</td><td>25 €</td><td>20 €</td></tr>
+              <tr><td><b>Banderole premium</b></td><td>40 €</td><td>35 €</td><td>30 €</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+      <div class="sgrid">
+        <article class="s"><img src="img/c_xbanner.jpg" alt="X-banner"><div class="bd"><h3>X-banner</h3><p class="dim">180 × 80 cm</p><p>Kakémono léger et facile à transporter.</p><span class="dv"><small>à partir de</small>55 €</span></div></article>
+        <article class="s"><img src="img/c_mur.jpg" alt="Photocall"><div class="bd"><h3>Photocall</h3><p class="dim">286 × 217 cm</p><p>Fond pour photos, podiums, conférences et remises de prix.</p><span class="dv"><small>à partir de</small>300 €</span></div></article>
+        <article class="s"><img src="img/c_tente.jpg" alt="Tente pliante"><div class="bd"><h3>Tente pliante</h3><p class="dim">150 × 150 cm</p><p>Barnum à vos couleurs pour l'accueil, un stand ou la buvette.</p><span class="dv"><small>à partir de</small>250 €</span></div></article>
+        <article class="s"><img src="img/c_popup.jpg" alt="Golf banner"><div class="bd"><h3>Golf banner (pop-up)</h3><p class="dim">150 × 70 cm</p><p>Se déplie en quelques secondes, idéal en bord de terrain.</p><span class="dv"><small>à partir de</small>130 €</span></div></article>
+        <article class="s wide"><img src="img/c_flags.jpg" alt="Drapeaux beach flags"><div class="bd"><h3>Drapeaux (beach flags)</h3><p class="dim">Exemple : drapeau de 290 cm</p><p>Formes goutte ou voile, plusieurs hauteurs et types de pieds.</p><span class="dv"><small>à partir de</small>90 €</span></div></article>
+      </div>
+      <p class="note"><b>Prix indicatifs « à partir de »</b>, pour le modèle de base. Le tarif varie selon les dimensions et les options choisies (type de base, sac de transport, impression recto-verso…). Ces supports ne sont qu'une partie des articles disponibles : contactez-nous pour toute autre demande.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Options &amp; services</span>
+        <h2>Personnalisation &amp; services</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="svc">
+        <div class="opt"><div><h3>Prénom, nom ou surnom</h3><p>Dans le dos, sur tous les articles textiles</p></div><div class="pp">+4 €<small>par article</small></div></div>
+        <div class="opt"><div><h3>Initiales ou numéro</h3><p>Devant, sur tous les articles textiles</p></div><div class="pp">+1,50 €<small>par article</small></div></div>
+        <div class="live">
+          <div><h3>Stand boutique sur vos manifestations</h3><p>Tournois, fêtes du club, événements d'entreprise : nous installons un stand de personnalisation de tee-shirts. Chacun choisit et règle sa personnalisation directement sur place, sans frais pour l'organisateur.</p></div>
+          <span class="badge">Var et alentours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="devis" style="background:#f3efe7">
+    <div class="wrap devis">
+      <div>
+        <div class="sec-head" style="margin-bottom:0">
+          <span class="eyebrow">Devis gratuit</span>
+          <h2>Demander un devis</h2>
+          <div class="rule"></div>
+          <p class="lead">Indiquez les articles qui vous intéressent, les quantités et l'emplacement du logo. Nous vous répondons avec un devis précis.</p>
+        </div>
+        <ol class="how">
+          <li><i>1</i><div><b>Choisissez</b><span>Les articles, les coloris et les quantités.</span></div></li>
+          <li><i>2</i><div><b>Envoyez votre logo</b><span>Et vos options : noms, numéros, initiales.</span></div></li>
+          <li><i>3</i><div><b>Recevez votre devis</b><span>Un devis précis, adapté à votre projet, avant toute commande.</span></div></li>
+        </ol>
+      </div>
+      <form id="form" novalidate>
+        <div class="f"><label for="q-nom">Nom et prénom</label><input id="q-nom" autocomplete="name" placeholder="Julie Martin"></div>
+        <div class="f"><label for="q-struct">Structure</label><input id="q-struct" autocomplete="organization" placeholder="Nom du club, de l'entreprise…"></div>
+        <div class="f"><label for="q-type">Vous êtes</label><select id="q-type"><option>Association / club</option><option>Entreprise</option><option>Collectivité</option></select></div>
+        <div class="f"><label for="q-tel">Téléphone</label><input id="q-tel" type="tel" autocomplete="tel" placeholder="06 …"></div>
+        <div class="f full"><label for="q-mail">E-mail</label><input id="q-mail" type="email" autocomplete="email" placeholder="vous@exemple.fr"></div>
+        <div class="f full"><span class="lbl">Articles et quantités</span><div class="lines" id="lines"></div><button type="button" class="add" id="add">+ Ajouter un article</button></div>
+        <div class="f full"><span class="lbl">Emplacement du logo</span>
+          <div class="checks" id="q-place">
+            <label><input type="checkbox" id="pl-coeur" value="Cœur" checked>Cœur</label>
+            <label><input type="checkbox" id="pl-dos" value="Dos">Dos</label>
+            <label><input type="checkbox" id="pl-manche" value="Manche">Manche</label>
+            <label><input type="checkbox" id="pl-jambe" value="Jambe">Jambe</label>
+          </div>
+        </div>
+        <div class="f full"><span class="lbl">Options</span>
+          <div class="checks" id="q-opts">
+            <label><input type="checkbox" id="op-nom" value="Prénom / nom dans le dos" checked>Prénom / nom dans le dos</label>
+            <label><input type="checkbox" id="op-num" value="Initiales ou numéro devant">Initiales ou numéro devant</label>
+          </div>
+        </div>
+        <div class="f full"><label for="q-msg">Votre projet</label><textarea id="q-msg" placeholder="Ex. : tenues pour nos équipes jeunes, aux couleurs bleu et blanc, pour la rentrée de septembre. Taille du logo, texte seul, délai souhaité…"></textarea></div>
+        <div class="f full"><p class="err" id="err" hidden></p><button class="btn btn-gold" type="submit">Préparer ma demande</button></div>
+        <div class="recap" id="recap" hidden>
+          <b>Votre demande est prête</b>
+          <p style="font-size:13.5px;color:var(--muted)">Cliquez sur « Ouvrir ma messagerie » ou copiez ce récapitulatif et envoyez-le à <b style="color:var(--ink);user-select:all">teamlcsport@gmail.com</b>, en joignant votre logo.</p>
+          <pre id="recap-text"></pre>
+          <div class="row"><button type="button" class="btn btn-gold btn-sm" id="copy-recap">Copier le récapitulatif</button><a class="btn btn-ghost btn-sm" id="mailto" href="#">Ouvrir ma messagerie</a><span class="ok" id="copied" hidden>Récapitulatif copié.</span></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div><h2>Un projet ? Parlons-en.</h2><p>Envoyez-nous votre logo, les articles qui vous intéressent et les quantités : nous vous répondons avec un devis précis.</p></div>
+      <div class="coord">
+        <div><span class="k">Téléphone</span><span class="v" id="c-tel">06 64 13 39 97</span><button class="copy" type="button" data-copy="c-tel">Copier</button></div>
+        <div><span class="k">E-mail</span><span class="v" id="c-mail">teamlcsport@gmail.com</span><button class="copy" type="button" data-copy="c-mail">Copier</button></div>
+        <div><span class="k">Livraison</span><span class="v">Envoi partout en France</span></div>
+      </div>
+    </div>
+    <div class="legal"><span>© Team LC Sport</span><span>Prix en euros · TVA non applicable, art. 293 B du CGI</span></div>
+  </div>
+</footer>
+
+<script>
+// Pour ajouter un article : une ligne de plus dans ce tableau.
+const PRODUITS = [
+  {id:'tshirt', nom:'T-shirt', mat:'100 % coton', cat:'hauts', prix:6, img:['beagle.jpg'], coloris:true},
+  {id:'tshirt-sport', nom:'T-shirt sport', mat:'Polyester technique', cat:'hauts', prix:5, img:['bahrain.jpg'], coloris:true},
+  {id:'polo', nom:'Polo', mat:'Coton', cat:'hauts', prix:11.5, img:['austral.jpg'], coloris:true},
+  {id:'polo-sport', nom:'Polo sport', mat:'Polyester technique, bicolore', cat:'hauts', prix:10, img:['montmelo.jpg'], coloris:true},
+  {id:'sweat', nom:'Sweat à capuche', mat:'Coton', cat:'hauts', prix:18, img:['urban.jpg'], coloris:true},
+  {id:'veste', nom:'Veste zippée à capuche', mat:'Coton', cat:'hauts', prix:23, img:['montblanc.jpg'], coloris:true},
+  {id:'survet', nom:'Survêtement', mat:'Polyester · veste + pantalon', cat:'bas', prix:37.5, img:['evans.jpg','evans2.jpg'], coloris:true},
+  {id:'jogging', nom:'Pantalon jogging', mat:'Coton', cat:'bas', prix:21, img:['adelpho.jpg'], coloris:true, jambe:true},
+  {id:'short', nom:'Short de sport', mat:'Polyester technique', cat:'bas', prix:6.5, img:['player.jpg'], coloris:true, jambe:true},
+  {id:'shorty', nom:'Shorty femme', mat:'Coupe ajustée', cat:'bas', prix:7.5, img:['nelly.jpg'], coloris:false, jambe:true},
+  {id:'sac', nom:'Sac à dos', mat:'Poche avant zippée', cat:'accessoires', prix:10, img:['marabu.jpg'], coloris:true},
+];
+const CATS = [['tous','Tous les articles'],['hauts','T-shirts, polos & sweats'],['bas','Survêtements & bas'],['accessoires','Sacs & accessoires']];
+const AUTRES = ['Autre article textile','Goodies','Récompenses','Matériel sportif','Banderole','Banderole premium','X-banner','Photocall','Tente pliante','Golf banner','Drapeaux (beach flags)'];
+const eur = n => n.toLocaleString('fr-FR',{minimumFractionDigits: n%1?2:0, maximumFractionDigits:2}) + ' €';
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let cat = 'tous';
+try { const c = localStorage.getItem('tlcs-cat'); if (c && CATS.some(x=>x[0]===c)) cat = c; } catch(e) {}
+
+function renderFilters(){
+  const el = document.getElementById('filters');
+  el.innerHTML = CATS.map(([k,l]) => `<button type="button" class="chip" data-cat="${k}" aria-pressed="${k===cat}">${esc(l)}</button>`).join('');
+  el.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+    cat = b.dataset.cat; try { localStorage.setItem('tlcs-cat', cat); } catch(e) {}
+    renderFilters(); renderGrid();
+  }));
+}
+function renderGrid(){
+  const list = PRODUITS.filter(p => cat==='tous' || p.cat===cat);
+  document.getElementById('grid').innerHTML = list.map(p => `
+    <article class="prod">
+      <div class="ph${p.img.length>1?' duo':''}">${p.img.map(i=>`<img src="img/${i}" alt="${esc(p.nom)}" loading="lazy">`).join('')}</div>
+      <div class="bd">
+        <h3>${esc(p.nom)}</h3>
+        <span class="mat">${esc(p.mat)}</span>
+        ${p.coloris?'<span class="tag">Nombreux coloris disponibles</span>':''}
+        <div class="pr">
+          <div class="price"><small>à partir de</small>${eur(p.prix)}</div>
+          <button type="button" class="btn btn-ghost btn-sm" data-devis="${p.id}">Demander un devis</button>
+        </div>
+      </div>
+    </article>`).join('');
+  document.querySelectorAll('[data-devis]').forEach(b => b.addEventListener('click', () => {
+    const p = PRODUITS.find(x => x.id === b.dataset.devis);
+    addLine(p.nom, 10, true);
+    document.getElementById('devis').scrollIntoView();
+  }));
+}
+
+// lignes articles du formulaire
+const OPTIONS = [...PRODUITS.map(p=>p.nom), ...AUTRES];
+let lineId = 0;
+function addLine(nom, qte, replaceExample){
+  const lines = document.getElementById('lines');
+  if (replaceExample && lines.dataset.example === '1') { lines.innerHTML=''; lines.dataset.example='0'; }
+  const id = ++lineId;
+  const row = document.createElement('div'); row.className='line';
+  row.innerHTML = `<select id="art-${id}" aria-label="Article">${OPTIONS.map(o=>`<option${o===nom?' selected':''}>${esc(o)}</option>`).join('')}</select>
+    <input id="qte-${id}" type="number" min="1" inputmode="numeric" value="${qte}" aria-label="Quantité">
+    <button type="button" aria-label="Retirer cet article">×</button>`;
+  row.querySelector('button').addEventListener('click', () => row.remove());
+  lines.appendChild(row);
+}
+addLine('T-shirt', 10);
+document.getElementById('lines').dataset.example = '1';
+document.getElementById('add').addEventListener('click', () => { addLine(OPTIONS[0], 5); document.getElementById('lines').dataset.example='0'; });
+
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const err = document.getElementById('err');
+  const rows = [...document.querySelectorAll('#lines .line')].map(r => ({a:r.querySelector('select').value, q:parseInt(r.querySelector('input').value,10)}));
+  const missing = [];
+  if (!v('q-nom')) missing.push('votre nom');
+  if (!v('q-mail') && !v('q-tel')) missing.push('un e-mail ou un téléphone');
+  if (!rows.length || rows.some(r => !(r.q>0))) missing.push('au moins un article avec une quantité');
+  if (missing.length){ err.textContent = 'Il manque ' + missing.join(', ') + '.'; err.hidden=false; return; }
+  err.hidden = true;
+  const checked = sel => [...document.querySelectorAll(sel+' input:checked')].map(i=>i.value);
+  const txt = [
+    'Demande de devis — Team LC Sport', '',
+    'Nom : ' + v('q-nom'),
+    'Structure : ' + (v('q-struct') || '—') + ' (' + v('q-type') + ')',
+    'Téléphone : ' + (v('q-tel') || '—'),
+    'E-mail : ' + (v('q-mail') || '—'), '',
+    'Articles :', ...rows.map(r => '  • ' + r.q + ' × ' + r.a), '',
+    'Emplacement du logo : ' + (checked('#q-place').join(', ') || 'à définir'),
+    'Options : ' + (checked('#q-opts').join(', ') || 'aucune'), '',
+    'Projet :', v('q-msg') || '—', '',
+    '(Logo joint à ce message)'
+  ].join('\n');
+  document.getElementById('recap-text').textContent = txt;
+  document.getElementById('mailto').href = 'mailto:teamlcsport@gmail.com?subject=' + encodeURIComponent('Demande de devis — ' + (v('q-struct') || v('q-nom'))) + '&body=' + encodeURIComponent(txt);
+  document.getElementById('copied').hidden = true;
+  const rc = document.getElementById('recap'); rc.hidden = false; rc.scrollIntoView({block:'nearest'});
+});
+
+function copyText(text, sourceEl, done){
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(sourceEl); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+}
+document.getElementById('copy-recap').addEventListener('click', () => {
+  const pre = document.getElementById('recap-text');
+  copyText(pre.textContent, pre, () => { document.getElementById('copied').hidden = false; });
+});
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => {
+  const el = document.getElementById(b.dataset.copy);
+  copyText(el.textContent, el, () => { b.textContent = 'Copié'; setTimeout(()=>{ b.textContent='Copier'; }, 1600); });
+}));
+
+renderFilters(); renderGrid();
+</script>
+</body>
+</html>
